@@ -35,14 +35,6 @@ void MessageQueue<T>::send(T &&msg)
 }
 
 
-/* Implementation of class "TrafficLight" */
-
-
-// TrafficLight::TrafficLight()
-// {
-//     _currentPhase = TrafficLightPhase::red;
-// }
-
 void TrafficLight::waitForGreen()
 {
     while(true)
@@ -85,9 +77,7 @@ void TrafficLight::cycleThroughPhases()
     std::mt19937 gen(__randomDevice());
     std::uniform_int_distribution<int> __distributor(4000, 6000);
     int randomTime = __distributor(gen);
-    auto timeSinceLastUpdate = std::chrono::system_clock::now();
     auto start = std::chrono::high_resolution_clock::now();
-   
     while(true)
     {
         // auto duration = std::chrono::duration_cast<std::chrono::seconds>(time_now - time_at_last_ping);
@@ -110,7 +100,7 @@ void TrafficLight::cycleThroughPhases()
            start = std::chrono::high_resolution_clock::now();
            randomTime = __distributor(gen);
         }
-        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
     // FP.2a : Implement the function with an infinite loop that measures the time between two loop cycles 
     // and toggles the current phase of the traffic light between red and green and sends an update method 
