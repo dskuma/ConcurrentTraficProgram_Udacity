@@ -121,6 +121,7 @@ int main()
     std::vector<std::shared_ptr<Street>> streets;
     std::vector<std::shared_ptr<Intersection>> intersections;
     std::vector<std::shared_ptr<Vehicle>> vehicles;
+    std::vector<std::shared_ptr<TrafficLight>> trafficlights;
     std::string backgroundImg;
     int nVehicles = 6;
     createTrafficObjects_Paris(streets, intersections, vehicles, backgroundImg, nVehicles);
